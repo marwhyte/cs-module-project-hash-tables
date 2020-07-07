@@ -180,11 +180,8 @@ class HashTable:
         self.data = [None] * new_capacity
         for i in range(len(old_table)):
             if old_table[i] is not None:
-                if old_table[i].next is not None:
-                    curr = old_table[i]
-                    self.put(curr.key, curr.value)
-                else:
-                    self.put(old_table[i].key, old_table[i].value)
+                curr = old_table[i]
+                self.put(curr.key, curr.value)
 
 
 if __name__ == "__main__":
