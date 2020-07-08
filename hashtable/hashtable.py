@@ -163,10 +163,7 @@ class HashTable:
             curr = self.data[index]
             while curr.next != None and curr.key != key:
                 curr = self.data[index].next
-            if curr == None:
-                return None
-            else:
-                return curr.value
+            return curr.value
 
     def resize(self, new_capacity):
         """
@@ -182,6 +179,7 @@ class HashTable:
             if old_table[i] is not None:
                 curr = old_table[i]
                 self.put(curr.key, curr.value)
+            # add while loop for if collisions exist on old table
 
 
 if __name__ == "__main__":
